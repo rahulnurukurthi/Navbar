@@ -31,31 +31,33 @@ export default function HomePage(props) {
 
   return (
     <div>
-      {currencyValues.length > 0 ? (
-        <Box style={{ padding: "32px" }}>
-          <Typography variant="h6" style={{ marginBottom: "16px" }}>
-            {props.pageName}
-          </Typography>
-          <Typography
-            variant="h4"
-            style={{ color: "#878787", fontWeight: "bold" }}
-          >
-            1 Bitcoin Equals
-          </Typography>
-          {displayAmount()}
-        </Box>
-      ) : (
-        <Typography
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100%",
-          }}
-        >
-          No Data
+      <Box style={{ padding: "32px" }}>
+        <Typography variant="h6" style={{ marginBottom: "16px" }}>
+          {props.pageName}
         </Typography>
-      )}
+        {currencyValues.length > 0 ? (
+          <Box>
+            <Typography
+              variant="h4"
+              style={{ color: "#878787", fontWeight: "bold" }}
+            >
+              1 Bitcoin Equals
+            </Typography>
+            {displayAmount()}
+          </Box>
+        ) : (
+          <Typography
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100%",
+            }}
+          >
+            Data is loading ...
+          </Typography>
+        )}
+      </Box>
     </div>
   );
 }
